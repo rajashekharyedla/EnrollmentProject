@@ -1,0 +1,19 @@
+version: '2'
+
+services:
+   db:
+     image: rajashekhary/enrollmentjpaproject:latest
+     restart: always
+     ports:
+     - "3312:3312"
+       
+   app:
+    build: .
+    ports:
+      - "8787:8787"
+    depends_on:
+      - db
+    links:
+      - db
+    environment:
+      - database.url=jdbc:mysql://db/jpaenrollment

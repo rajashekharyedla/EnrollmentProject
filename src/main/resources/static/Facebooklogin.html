@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<script src="http://code.jquery.com/jquery-1.10.2.js"
+	type="text/javascript"></script>
+</head>
+<body>
+	<script>
+		// initialize and setup facebook js sdk
+		window.fbAsyncInit = function() {
+			FB.init({
+				appId : '1683523665288549',
+				xfbml : true,
+				version : 'v2.5'
+			});
+			FB
+					.getLoginStatus(function(response) {
+						if (response.status === 'connected') {
+							document.getElementById('status').innerHTML = 'We are connected.';
+							document.getElementById('login').style.visibility = 'hidden';
+						} else if (response.status === 'not_authorized') {
+							document.getElementById('status').innerHTML = 'We are not logged in.'
+						} else {
+							document.getElementById('status').innerHTML = 'You are not logged into Facebook.';
+						}
+					});
+		};
+		(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) {
+				return;
+			}
+			js = d.createElement(s);
+			js.id = id;
+			js.src = "//connect.facebook.net/en_US/sdk.js";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+
+		// login with facebook with extra permissions
+		function login() {
+			FB
+					.login(
+							function(response) {
+								if (response.status === 'connected') {
+									getInfo();
+								} else if (response.status === 'not_authorized') {
+									document.getElementById('status').innerHTML = 'We are not logged in.';
+								} else {
+									document.getElementById('status').innerHTML = 'You are not logged into Facebook.';
+								}
+							}, {
+								scope : 'email'
+							});
+		}
+
+		function getInfo() {
+			FB.api('/me', 'GET', {
+				fields : 'first_name,last_name,name,id,email'
+			}, function(response) {
+				document.getElementById('status').innerHTML = "first Name    :"
+						+ response.first_name;
+				document.getElementById('status1').innerHTML = "last Name   :"
+						+ response.last_name;
+				document.getElementById('status2').innerHTML = "ID          :"
+						+ response.id;
+				document.getElementById('status3').innerHTML = "Email       :"
+						+ response.email;
+				var uri = 'http://10.9.8.196:8787/fb/' + response.id + '';
+				var jsondata = '{"firstName": "' + response.first_name
+						+ '","lastName": "' + response.last_name
+						+ '","email": "' + response.email + '"}';
+				/* ","loginType":"2 */
+				document.getElementById('jsondata').innerHTML = "jsondata :"
+						+ jsondata;
+				$.ajax({
+					type : "POST",
+					url : uri,
+					contentType : "application/json",
+					dataType : "json",
+					data : jsondata,
+					success : function(result) {
+						alert("Inserted successfully");
+					}
+				});
+			});
+		}
+	</script>
+
+	<div>
+		<h1 id="status">Your First Name</h1>
+		<h1 id="status1">Your Last Name</h1>
+		<h1 id="status2">Your Id</h1>
+		<h1 id="status3">Your email</h1>
+		<h1 id="jsondata"></h1>
+	</div>
+	<button onclick="getInfo()">Get Info</button>
+	<button onclick="login()" id="login">Login</button>
+	<button onclick="logout" id="logout">logout</button>
+</body>
+</html>
