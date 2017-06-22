@@ -184,9 +184,9 @@
 						</regexes>
 					</check>
 					<instrumentation>
-						<ignoreTrivial>true</ignoreTrivial>
+						
 						<ignores>
-							<ignore>com/wavelabs/enrollmen/test/*.class</ignore>
+							<ignore>src.main.java.com.wavelabs.enrollment.*</ignore>
 						</ignores>
 						<excludes>
 							<exclude>com/wavelabs/enrollment/*.class</exclude>
