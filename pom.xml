@@ -159,12 +159,13 @@
 					</formats>
 					<check>
 						<haltOnFailure>true</haltOnFailure>
-						<branchRate>12</branchRate>
-						<lineRate>30</lineRate>
+						<branchRate>30</branchRate>
+						
+						
 						<totalBranchRate>30</totalBranchRate>
 						<totalLineRate>30</totalLineRate>
 						<packageLineRate>30</packageLineRate>
-						<packageBranchRate>12</packageBranchRate>
+						<packageBranchRate>30</packageBranchRate>
 						<regexes>
 							<regex>
 								<pattern>com.wavelabs.entity</pattern>
@@ -197,7 +198,7 @@
 					<execution>
 						<phase>verify</phase>
 						<goals>
-						
+							<goal>check</goal>
 							<goal>cobertura</goal>
 						</goals>
 					</execution>
