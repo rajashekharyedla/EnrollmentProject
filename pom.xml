@@ -177,7 +177,7 @@
 								<lineRate>30</lineRate>
 							</regex>
 							<regex>
-								<pattern>com.wavelabs.enrollment.test</pattern>
+								<pattern>com.wavelabs.enrollment</pattern>
 								<branchRate>30</branchRate>
 								<lineRate>30</lineRate>
 							</regex>
@@ -186,7 +186,7 @@
 					<instrumentation>
 						<ignoreTrivial>true</ignoreTrivial>
 						<ignores>
-							<ignore>src.main.java.com.wavelabs.enrollment.test.*</ignore>
+							<ignore>com/wavelabs/enrollmen/test/*.class</ignore>
 						</ignores>
 						<excludes>
 							<exclude>com/wavelabs/enrollment/*.class</exclude>
