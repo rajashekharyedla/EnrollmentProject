@@ -1,5 +1,5 @@
 package com.wavelabs.enrollment.test;
-
+/*
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,5 +13,5 @@ public class EnrollmentJpaApplicationTest {
 	public void contextLoads() {
 		Assert.assertEquals(true, true);
 	}*/
-}
+}*/
 
