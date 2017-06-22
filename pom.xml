@@ -176,8 +176,22 @@
 								<branchRate>30</branchRate>
 								<lineRate>30</lineRate>
 							</regex>
+							<regex>
+								<pattern>com.wavelabs.enrollment.test</pattern>
+								<branchRate>30</branchRate>
+								<lineRate>30</lineRate>
+							</regex>
 						</regexes>
 					</check>
+					<instrumentation>
+						<ignoreTrivial>true</ignoreTrivial>
+						<ignores>
+							<ignore>src.test.java.com.wavelabs.enrollment.test.*</ignore>
+						</ignores>
+						<excludes>
+							<exclude>/src/test/java/com/wavelabs/enrollment/test/**</exclude>
+						</excludes>
+					</instrumentation>
 				</configuration>
 				<executions>
 					<execution>
