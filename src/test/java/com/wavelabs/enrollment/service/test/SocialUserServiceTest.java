@@ -1,6 +1,8 @@
 package com.wavelabs.enrollment.service.test;
 
+import static org.junit.Assert.assertEquals;
 import static org.mockito.Matchers.any;
+import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -43,6 +45,13 @@ public class SocialUserServiceTest {
 		when(autrepo.save(any(AutherizationTokens.class))).thenReturn(mock(AutherizationTokens.class));
 		sus.persistSocialUser(DataBuilder.getUser(), null);
 		verify(autrepo, times(1)).save(any(AutherizationTokens.class));
+	}
+	@Test
+	public void testPersistSocialUser1() {
+		when(autrepo.findByTokenId(anyString())).thenReturn(null);
+//		sus.persistSocialUser(DataBuilder.getUser(), "52588555555");
+//		verify(autrepo, times(1)).save(any(AutherizationTokens.class));
+		assertEquals(null, autrepo.findByTokenId(anyString()));
 	}
 
 }
