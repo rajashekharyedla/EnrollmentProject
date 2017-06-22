@@ -197,7 +197,7 @@
 					<execution>
 						<phase>verify</phase>
 						<goals>
-							<goal>check</goal>
+						
 							<goal>cobertura</goal>
 						</goals>
 					</execution>
