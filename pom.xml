@@ -184,10 +184,12 @@
 						</regexes>
 					</check>
 					<instrumentation>
-						
-						
+						<ignoreTrivial>true</ignoreTrivial>
+						<ignores>
+							<ignore>src.main.java.com.wavelabs.enrollment.*</ignore>
+						</ignores>
 						<excludes>
-							<exclude>com/wavelabs/enrollment/*.*</exclude>
+							<exclude>com/wavelabs/enrollment/*.java</exclude>
 						</excludes>
 					</instrumentation>
 				</configuration>
