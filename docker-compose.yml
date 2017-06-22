@@ -5,7 +5,7 @@ services:
      image: rajashekhary/enrollmentjpaproject:latest
      restart: always
      ports:
-     - "3395:33195
+     - "3395:3395
        
    app:
     build: .
