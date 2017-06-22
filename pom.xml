@@ -185,9 +185,7 @@
 					</check>
 					<instrumentation>
 						
-						<ignores>
-							<ignore>src.main.java.com.wavelabs.enrollment*.class</ignore>
-						</ignores>
+						
 						<excludes>
 							<exclude>com/wavelabs/enrollment/*.class</exclude>
 						</excludes>
