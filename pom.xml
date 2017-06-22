@@ -159,9 +159,8 @@
 					</formats>
 					<check>
 						<haltOnFailure>true</haltOnFailure>
-						<branchRate>30</branchRate>
-						
-						
+						<branchRate>35</branchRate>
+						<lineRate>0</lineRate>
 						<totalBranchRate>30</totalBranchRate>
 						<totalLineRate>30</totalLineRate>
 						<packageLineRate>30</packageLineRate>
