@@ -186,10 +186,10 @@
 					<instrumentation>
 						<ignoreTrivial>true</ignoreTrivial>
 						<ignores>
-							<ignore>src.test.java.com.wavelabs.enrollment.test.*</ignore>
+							<ignore>src.main.java.com.wavelabs.enrollment.test.*</ignore>
 						</ignores>
 						<excludes>
-							<exclude>/src/test/java/com/wavelabs/enrollment/test/**</exclude>
+							<exclude>/src/main/java/com/wavelabs/enrollment/test/**</exclude>
 						</excludes>
 					</instrumentation>
 				</configuration>
