@@ -189,7 +189,7 @@
 							<ignore>src.main.java.com.wavelabs.enrollment.test.*</ignore>
 						</ignores>
 						<excludes>
-							<exclude>/src/main/java/com/wavelabs/enrollment/test/**</exclude>
+							<exclude>com/wavelabs/enrollment/*.class</exclude>
 						</excludes>
 					</instrumentation>
 				</configuration>
